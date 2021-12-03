@@ -1,6 +1,5 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
-import "./App.css";
 import ToDoList from "./ToDoList";
 
 const GlobalStyle = createGlobalStyle`
