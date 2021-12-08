@@ -18,6 +18,15 @@ const ToDo = ({ text, category, id }: IToDo) => {
       ];
     });
   };
+  const onDelete = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setTodos((oldToDos) => {
+      const targetIndex = oldToDos.findIndex((toDo) => toDo.id === id);
+      return [
+        ...oldToDos.slice(0, targetIndex),
+        ...oldToDos.slice(targetIndex + 1),
+      ];
+    });
+  };
   return (
     <li>
       <span>{text}</span>
@@ -36,6 +45,7 @@ const ToDo = ({ text, category, id }: IToDo) => {
           Done
         </button>
       )}
+      <button onClick={onDelete}>❌</button>
     </li>
   );
 };
