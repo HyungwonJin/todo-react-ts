@@ -5,9 +5,11 @@ import CreateToDo from "./CreateToDo";
 import ToDo from "./ToDo";
 
 function ToDoList() {
+  // localStorage 저장
   const value = useRecoilValue(toDoState);
   const localValue = JSON.stringify(value);
   localStorage.setItem("toDo", localValue);
+
   const toDos = useRecoilValue(toDoSelector);
   const [category, setCategory] = useRecoilState(categoryState);
   const onInput = (event: React.FormEvent<HTMLSelectElement>) => {
